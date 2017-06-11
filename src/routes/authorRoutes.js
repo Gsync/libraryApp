@@ -1,5 +1,5 @@
 var express = require('express');
-var bookRouter = express.Router();
+var authorRouter = express.Router();
 
 var router = function(nav) {
   var books = [
@@ -59,16 +59,16 @@ var router = function(nav) {
           'website': 'https://leanpub.com/understandinges6/read'
         }];
 
-    bookRouter.route('/')
+    authorRouter.route('/')
       .get(function(req, res) {
-          res.render('booksListView', {
+          res.render('authorsListView', {
               title: 'Books',
               nav: nav,
               books: books
             });
       });
 
-    bookRouter.route('/:id')
+    authorRouter.route('/:id')
       .get(function(req, res) {
           var id = req.params.id;
            res.render('bookView', {
@@ -78,7 +78,7 @@ var router = function(nav) {
             });
       });
 
-    return bookRouter;
+    return authorRouter;
 };
 
 
