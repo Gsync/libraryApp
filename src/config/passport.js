@@ -1,14 +1,14 @@
 var passport = require('passport');
 
-module.export = function (app) {
+module.exports = function (app) {
   app.use(passport.initialize());
   app.use(passport.session());
 
-  passport.seializeUser(function(user, done) {
+  passport.serializeUser(function(user, done) {
     done(null, user);
   });
 
-  passport.deseializeUser(function(user, done) {
+  passport.deserializeUser(function(user, done) {
     done(null, user);
   });
 

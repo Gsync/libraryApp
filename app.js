@@ -2,7 +2,7 @@ var express     = require('express');
 var bodyParser  = require('body-parser');
 var cookieParser= require('cookie-parser');
 var passport    = require('passport');
-var session    = require('express-session');
+var session     = require('express-session');
 
 var app         = express();
 var PORT        = process.env.PORT || 5000;
@@ -28,6 +28,7 @@ app.use(session({
   resave: true,
   saveUninitialized: true
   }));
+
 require('./src/config/passport.js')(app);
 
 app.set('views', './src/views');
